@@ -4,8 +4,7 @@
 
 
 let presupuesto = 0;
-let gastos = [];
-idGasto= 0;
+
 
 
 function actualizarPresupuesto(budget) {
@@ -30,23 +29,27 @@ function CrearGasto(descripcion,valor) {
     // TODO
     
     
-    this.descripcion=descripcion;
     
-    if(valor < 0){
-        this.valor= 0;
+    this.descripcion = descripcion;
+        if(valor < 0){
+            this.valor= 0;
+            
         
-        
-    }
-    else{
-        this.valor = valor;
-        
-    }
+            
+        }
+        else{
+            this.valor = valor;
+            
+        }
+
+        this.mostrarGasto = function(){
+            return `Gasto correspondiente a ${this.descripcion} con valor ${this.valor} €`
+        }
+    
 
 
 
-    this.mostrarGasto = function(){
-        return `Gasto correspondiente a ${this.descripcion} con valor ${this.valor} €`
-    }
+    
 
     this.actualizarDescripcion = function(nuevaDescripcion){
 
@@ -65,6 +68,8 @@ function CrearGasto(descripcion,valor) {
         
     }
 
+    
+    
     
  }
 
@@ -91,11 +96,7 @@ export   {
     mostrarPresupuesto,
     actualizarPresupuesto,
     CrearGasto,
-    listarGastos,
-    anyadirGasto,
-    borrarGasto,
-    calcularTotalGastos,
-    calcularBalance
+    
 
     
 }
